@@ -10,4 +10,3 @@ npm run build
 set +x
 
 echo 'Deploying'
-find build -type f -exec curl -u admin:admin --ftp-create-dirs -T {} http://18.191.215.188:8080/manager/text/deploy?path=/Akash
