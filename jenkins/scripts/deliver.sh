@@ -10,7 +10,14 @@ npm run build
 set +x
 
 echo 'Deploying'
-for file in build/*
-do
-  curl -u admin:admin -T ${file} http://18.191.215.188:8080/manager/deploy?path=/Akash_webApp
-done
+#for file in build/*
+#do
+#  curl -u admin:admin -T ${file} http://18.191.215.188:8080/manager/deploy?path=/Akash_webApp
+#done
+ssh user@18.191.215.188:8080 <<EOF
+ cd ~/Akash-app
+ git pull
+ npm install — production
+ pm2 restart all
+ exit
+EOF
