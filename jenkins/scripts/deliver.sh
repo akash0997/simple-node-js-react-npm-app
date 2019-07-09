@@ -12,5 +12,5 @@ set +x
 echo 'Deploying'
 for file in /build/*
 do
-  curl -u admin:admin -T ${file} http://18.191.215.188:8080/manager/${file}
+  curl -u admin:admin -T ${file} http://18.191.215.188:8080/manager/deploy?path=/Akash_webApp
 done
